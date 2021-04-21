@@ -12,6 +12,7 @@
     "homepage": "https://github.com/phobrv/coreadmin",
     "keywords": ["Laravel", "CoreAdmin"],
     "require": {
+        "laravel/framework": "^8.0",
         "illuminate/support": "~7|~8"
     },
     "require-dev": {
