@@ -1,6 +1,6 @@
 {
     "name": "phobrv/coreadmin",
-    "description": ":package_description",
+    "description": "The admin page for the web is built with Laravel framework",
     "license": "MIT",
     "authors": [
         {
