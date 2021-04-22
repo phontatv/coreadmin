@@ -1,18 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
+Route::middleware(['web', 'auth', 'auth:sanctum', 'lang', 'verified'])->prefix('dashboard')
+	->namespace('Phobrv\CoreAdmin\Http\Controllers')->group(function () {
+	Route::get('/', 'TestController@index')->name('dashboard');
+});
 
-Route::middleware(['web', 'auth', 'auth:sanctum', 'lang', 'verified'])->prefix('admin')->namespace('Phobrv\CoreAdmin\Http\Controllers')
-	->group(function () {
-		Route::get('lang/{lang}', 'LanguageController@changeLang')->name('lang');
-		Route::get('/phobrv', 'TestController@index')->name('phobrv');
+Route::middleware(['web', 'auth', 'auth:sanctum', 'lang', 'verified'])->prefix('admin')
+	->namespace('Phobrv\CoreAdmin\Http\Controllers')->group(function () {
+	Route::get('lang/{lang}', 'LanguageController@changeLang')->name('lang');
+
+	Route::middleware(['can:super_admin'])->group(function () {
+		Route::resource('user', 'UserController');
+		Route::post('user/resetPass', 'UserController@resetPass')->name('user.resetPass');
+		Route::resource('role', 'RoleController');
+		Route::get('/permission/reimport', 'PermissionController@reimport')->name('permission.reimport');
 	});
+
+});

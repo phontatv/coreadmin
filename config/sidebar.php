@@ -7,7 +7,7 @@ return [
 			'id' => 'menu-dashboard',
 			'title' => 'Dashboard',
 			'icon' => 'fa fa-dashboard',
-			'href' => 'admin/dashboard',
+			'href' => '/dashboard',
 			'permissions' => ['view_report'],
 			'children' => [],
 		],

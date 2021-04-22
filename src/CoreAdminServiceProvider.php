@@ -45,10 +45,10 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		// Publishing the configuration file.
 		$this->publishes([
 			__DIR__ . '/../config/coreadmin.php' => config_path('coreadmin.php'),
-		], 'coreadmin.config');
-		$this->publishes([
+			__DIR__ . '/../config/option.php' => config_path('option.php'),
 			__DIR__ . '/../config/sidebar.php' => config_path('sidebar.php'),
 		], 'coreadmin.config');
+
 		// Publishing assets.
 		$this->publishes([
 			__DIR__ . '/../resources/assets/' => public_path('vendor/phobrv'),

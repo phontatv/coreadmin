@@ -3,9 +3,9 @@
 namespace Phobrv\CoreAdmin\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\UserRepository;
 use Auth;
 use Illuminate\Http\Request;
+use Phobrv\CoreAdmin\Repositories\UserRepository;
 
 class LanguageController extends Controller {
 	protected $userRepository;
