@@ -2,7 +2,7 @@
 
 namespace Phobrv\CoreAdmin\Repositories;
 
-use Phobrv\CoreAdmin\Models\User;
+use App\Models\User;
 use Phobrv\CoreAdmin\Models\UserMeta;
 use Phobrv\CoreAdmin\Repositories\UserRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
