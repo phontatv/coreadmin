@@ -11,7 +11,8 @@
 |
  */
 
-Route::middleware(['web', 'auth', 'auth:sanctum', 'lang', 'verified'])->prefix('admin')->namespace('Phobrv\CoreAdmin\Controllers')
+Route::middleware(['web', 'auth', 'auth:sanctum', 'lang', 'verified'])->prefix('admin')->namespace('Phobrv\CoreAdmin\Http\Controllers')
 	->group(function () {
+		Route::get('lang/{lang}', 'LanguageController@changeLang')->name('lang');
 		Route::get('/phobrv', 'TestController@index')->name('phobrv');
 	});

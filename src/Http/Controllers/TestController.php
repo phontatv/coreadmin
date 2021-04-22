@@ -1,6 +1,6 @@
 <?php
 
-namespace Phobrv\CoreAdmin\Controllers;
+namespace Phobrv\CoreAdmin\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Auth;

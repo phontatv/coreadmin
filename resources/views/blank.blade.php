@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('phobrv::layout.app')
 
 @section('header')
 

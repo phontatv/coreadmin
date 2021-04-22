@@ -61,6 +61,6 @@ class User extends Authenticatable {
 	];
 
 	public function userMetas() {
-		return $this->hasMany('App\Models\UserMeta');
+		return $this->hasMany('Phobrv\CoreAdmin\Models\UserMeta');
 	}
 }
