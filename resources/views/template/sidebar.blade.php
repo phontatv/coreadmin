@@ -1,3 +1,4 @@
+
 <aside class="main-sidebar">
   <section class="sidebar">
     <div class="user-panel">
@@ -13,6 +14,7 @@
   </div>
   <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
+
     @if( count( config('sidebar.menu') ) > 0 )
     @foreach( config('sidebar.menu') as $menu )
     @can($menu['permissions'])

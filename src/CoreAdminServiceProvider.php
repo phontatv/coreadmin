@@ -2,11 +2,17 @@
 
 namespace Phobrv\CoreAdmin;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class CoreAdminServiceProvider extends ServiceProvider {
 
 	public function boot(): void{
+
+		Gate::before(function ($user, $ability) {
+			return $user->hasRole('SuperAdmin') ? true : null;
+		});
+
 		$this->loadRepositories();
 		$this->migrations();
 		// $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'phobrv');
@@ -43,21 +49,18 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		$this->publishes([
 			__DIR__ . '/../config/sidebar.php' => config_path('sidebar.php'),
 		], 'coreadmin.config');
+		// Publishing assets.
+		$this->publishes([
+			__DIR__ . '/../resources/assets/' => public_path('vendor/phobrv'),
+		], 'coreadmin.assets');
+		// Publishing the translation files.
+		$this->publishes([
+			__DIR__ . '/../resources/lang' => resource_path('lang/vendor/phobrv'),
+		], 'coreadmin.lang');
 
 		// Publishing the views.
 		// $this->publishes([
 		// 	__DIR__ . '/../resources/views' => base_path('resources/views/vendor/phobrv'),
-		// ], 'coreadmin.views');
-
-		// Publishing assets.
-		// echo __DIR__ . '/../resources/assets/';
-		$this->publishes([
-			__DIR__ . '/../resources/assets/' => public_path('vendor/phobrv'),
-		], 'coreadmin.views');
-
-		// Publishing the translation files.
-		// $this->publishes([
-		// __DIR__.'/../resources/lang' => resource_path('lang/vendor/phobrv'),
 		// ], 'coreadmin.views');
 
 		// Registering package commands.
