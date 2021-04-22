@@ -2,6 +2,7 @@
     "name": "phobrv/coreadmin",
     "description": "The admin page for the web is built with Laravel framework",
     "license": "MIT",
+    "type": "project",
     "authors": [
         {
             "name": "Nguyen Trong Pho",
