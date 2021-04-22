@@ -5,12 +5,9 @@ namespace Phobrv\CoreAdmin;
 use Illuminate\Support\ServiceProvider;
 
 class CoreAdminServiceProvider extends ServiceProvider {
-	/**
-	 * Perform post-registration booting of services.
-	 *
-	 * @return void
-	 */
+
 	public function boot(): void{
+		$this->loadRepositories();
 		// $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'phobrv');
 		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'phobrv');
 		// $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
@@ -22,11 +19,6 @@ class CoreAdminServiceProvider extends ServiceProvider {
 
 	}
 
-	/**
-	 * Register any package services.
-	 *
-	 * @return void
-	 */
 	public function register(): void{
 		$this->mergeConfigFrom(__DIR__ . '/../config/coreadmin.php', 'coreadmin');
 
@@ -36,20 +28,10 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		});
 	}
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
 	public function provides() {
 		return ['coreadmin'];
 	}
 
-	/**
-	 * Console-specific booting.
-	 *
-	 * @return void
-	 */
 	protected function bootForConsole(): void{
 		// Publishing the configuration file.
 		$this->publishes([
@@ -73,5 +55,12 @@ class CoreAdminServiceProvider extends ServiceProvider {
 
 		// Registering package commands.
 		// $this->commands([]);
+	}
+
+	protected function loadRepositories() {
+		$this->app->bind(
+			\Phobrv\CoreAdmin\Repositories\UserRepository::class,
+			\Phobrv\CoreAdmin\Repositories\UserRepositoryEloquent::class
+		);
 	}
 }

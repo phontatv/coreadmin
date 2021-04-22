@@ -13,6 +13,14 @@
     "keywords": ["Laravel", "CoreAdmin"],
     "require": {
         "laravel/framework": "^8.0",
+        "laravel/jetstream": "^2.1",
+        "laravel/sanctum": "^2.6",
+        "laravelcollective/html": "^6.2",
+        "livewire/livewire": "^2.0",
+        "prettus/l5-repository": "^2.7",
+        "sendgrid/sendgrid": "^7.9",
+        "spatie/laravel-permission": "^4.0",
+        "unisharp/laravel-filemanager": "^2.2",
         "illuminate/support": "~7|~8"
     },
     "require-dev": {
