@@ -46,5 +46,23 @@
                 "CoreAdmin": "Phobrv\\CoreAdmin\\Facades\\CoreAdmin"
             }
         }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "git-update":[
+            "git pull",
+            "git add .",
+            "git commit -m 'update' ",
+            "git push"
+        ]
     }
 }

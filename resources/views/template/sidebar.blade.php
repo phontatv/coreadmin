@@ -3,7 +3,7 @@
     <div class="user-panel">
       @auth
       <div class="pull-left image">
-       <img src="{{auth()->user()->avatar ?? asset('avatar.png') }}" class="img-circle" alt="User Image">
+       <img src="{{auth()->user()->avatar ?? asset('vendor/phobrv/img/avatar.png') }}" class="img-circle" alt="User Image">
      </div>
      <div class="pull-left info">
       <p>{{ auth()->user()->name ?? '' }}</p>

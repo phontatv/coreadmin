@@ -16,32 +16,26 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           @if(config('app.locale') == 'vi')
-          <img src="{{asset('img/vi.png')}}" alt="">
+          <img src="{{asset('vendor/phobrv/img/vi.png')}}" alt="">
           @else
-          <img src="{{asset('img/en.png')}}" alt="">
+          <img src="{{asset('vendor/phobrv/img/en.png')}}" alt="">
           @endif
            <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{route('lang',['lang'=>'en'])}}">English</a></li>
             <li><a href="{{route('lang',['lang'=>'vi'])}}">Tiếng Việt</a></li>
-            
+
           </ul>
         </li>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            @isset(auth()->user()->avatar)
-            <img src="{{auth()->user()->avatar}}" class="user-image" alt="User Image">
-            @endif
+            <img src="{{auth()->user()->avatar ?? asset('vendor/phobrv/img/avatar.png') }}" class="user-image" alt="User Image">
             <span class="hidden-xs">{{ auth()->user()->name ?? '' }}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              @isset(auth()->user()->avatar)
-              <img src="{{auth()->user()->avatar}}" class="img-circle" alt="User Image">
-              @else
-              <img src="{{asset('avatar.png')}}" class="img-circle" alt="User Image">
-              @endif
+              <img src="{{auth()->user()->avatar  ?? asset('vendor/phobrv/img/avatar.png')}}" class="img-circle" alt="User Image">
               <p>
                 {{ auth()->user()->name ?? ''  }}
                 @auth
@@ -49,7 +43,7 @@
                 @endauth
               </p>
             </li>
-            
+
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">

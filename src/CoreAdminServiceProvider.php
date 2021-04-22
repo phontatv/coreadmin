@@ -11,7 +11,7 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		$this->migrations();
 		// $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'phobrv');
 		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'phobrv');
-		// $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+		$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 		$this->loadRoutesFrom(__DIR__ . '/routes.php');
 
 		if ($this->app->runningInConsole()) {
@@ -45,9 +45,9 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		], 'coreadmin.config');
 
 		// Publishing the views.
-		$this->publishes([
-			__DIR__ . '/../resources/views' => base_path('resources/views/vendor/phobrv'),
-		], 'coreadmin.views');
+		// $this->publishes([
+		// 	__DIR__ . '/../resources/views' => base_path('resources/views/vendor/phobrv'),
+		// ], 'coreadmin.views');
 
 		// Publishing assets.
 		// echo __DIR__ . '/../resources/assets/';
