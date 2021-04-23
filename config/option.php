@@ -17,6 +17,11 @@ return [
 		'drugstore' => 'drugstore',
 		'product' => 'product',
 	],
+	'recieve_status' => [
+		'success' => '1',
+		'pending' => '0',
+		'fail' => '-1',
+	],
 	'post_status' => [
 		'publish' => '1',
 		'private' => '0',

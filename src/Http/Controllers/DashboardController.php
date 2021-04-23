@@ -4,11 +4,11 @@ namespace Phobrv\CoreAdmin\Http\Controllers;
 
 use Analytics;
 use App\Http\Controllers\Controller;
-use App\Repositories\PostRepository;
-use App\Repositories\ReceiveDataRepository;
-use App\Services\UnitServices;
 use Auth;
 use Carbon\Carbon;
+use Phobrv\CoreAdmin\Repositories\PostRepository;
+use Phobrv\CoreAdmin\Repositories\ReceiveDataRepository;
+use Phobrv\CoreAdmin\Services\UnitServices;
 use Spatie\Analytics\Period;
 
 class DashboardController extends Controller {
@@ -77,7 +77,6 @@ class DashboardController extends Controller {
 		);
 
 		$data['topVisitorAndPageView'] = Analytics::fetchVisitorsAndPageViews(Period::days(360))->sortByDesc('pageViews')->take(10);
-		// dd($data['topVisitorAndPageView']);
 		$data['trafficSource'] = $trafficSource['totalsForAllResults'];
 		$data['reportTrafficInDay'] = json_encode($reportTrafficInDay['rows']);
 		$data['count_blog'] = $this->postRepository->findWhere(['type' => 'post'])->count();

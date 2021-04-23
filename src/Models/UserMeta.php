@@ -9,7 +9,7 @@ use Prettus\Repository\Traits\TransformableTrait;
 /**
  * Class User.
  *
- * @package namespace App\Entities;
+ * @package namespace Phobrv\CoreAdmin\Models;
  */
 class UserMeta extends Model implements Transformable {
 	use TransformableTrait;
