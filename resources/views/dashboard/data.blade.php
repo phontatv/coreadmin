@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="{{asset('/vendor/phobrv/css/admin.css')}}">
-<script src="{{asset('/vendor/phobrv/js/admin.js')}}"></script>
 <div class="row">
 	<div class="col-lg-3 col-xs-6">
 		<div class="small-box bg-aqua">
