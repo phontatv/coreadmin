@@ -84,6 +84,6 @@ class DashboardController extends Controller {
 		$data['count_order'] = $orders->count();
 		$data['count_order_success'] = $orders->where('status', 'success')->count();
 		$data['count_order_pendding'] = $orders->where('status', 'pendding')->count();
-		return view('phobrv::dashboard.data')->with('data', $data);
+		return view('phobrv::dashboard.data')->with('data', $data)->render();
 	}
 }

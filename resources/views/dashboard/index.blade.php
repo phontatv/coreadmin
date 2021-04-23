@@ -43,7 +43,7 @@
 			type: "get",
 			datatype: "html"
 		}).done(function(data){
-			$("#dta").empty().html(data);
+			$("#data").empty().html(data);
 		}).fail(function(jqXHR, ajaxOptions, thrownError){
 			alert('No response from server');
 		});
