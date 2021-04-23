@@ -1,5 +1,5 @@
 <header class="main-header">
-  <a href="index2.html" class="logo">
+  <a href="{{ route('dashboard') }}" class="logo">
     <span class="logo-mini"><b>A</b>MP</span>
     <span class="logo-lg"><b>Admin</b>Page</span>
   </a>
