@@ -88,6 +88,7 @@ class RoleController extends Controller {
 		try {
 			$role = new Role;
 			$role->name = $request->name;
+			$role->guard_name = 'web';
 			$role->save();
 			$this->updateRole($role, $request->permissions);
 			$msg = "Create role success!";
@@ -163,6 +164,7 @@ class RoleController extends Controller {
 		try {
 			$role = Role::find($id);
 			$role->name = $request->name;
+			$role->guard_name = 'web';
 			$role->save();
 
 			$this->updateRole($role, $request->permissions);
@@ -207,6 +209,7 @@ class RoleController extends Controller {
 		//reAdd permissions
 		if ($permissions) {
 			foreach ($permissions as $key => $value) {
+				// dd(Permission::where(['name' => $value])->first());
 				$role->givePermissionTo(Permission::where(['name' => $value])->first());
 			}
 		}

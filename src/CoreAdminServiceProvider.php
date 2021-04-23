@@ -15,7 +15,7 @@ class CoreAdminServiceProvider extends ServiceProvider {
 
 		$this->loadRepositories();
 		$this->migrations();
-		// $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'phobrv');
+		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'phobrv');
 		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'phobrv');
 		$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 		$this->loadRoutesFrom(__DIR__ . '/routes.php');
@@ -55,7 +55,7 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		], 'coreadmin.assets');
 		// Publishing the translation files.
 		$this->publishes([
-			__DIR__ . '/../resources/lang' => resource_path('lang/vendor/phobrv'),
+			__DIR__ . '/../resources/lang' => resource_path('lang'),
 		], 'coreadmin.lang');
 
 		// Publishing the views.
