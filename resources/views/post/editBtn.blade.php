@@ -1,0 +1,1 @@
+<div><a href="{{ route('post.edit',array('post'=>$post->id)) }}"><i class="fa fa-edit" title="Sửa"></i></a></div>
