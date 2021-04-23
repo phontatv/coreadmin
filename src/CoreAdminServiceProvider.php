@@ -83,5 +83,33 @@ class CoreAdminServiceProvider extends ServiceProvider {
 			\Phobrv\CoreAdmin\Repositories\UserRepository::class,
 			\Phobrv\CoreAdmin\Repositories\UserRepositoryEloquent::class
 		);
+		$this->app->bind(
+			\Phobrv\CoreAdmin\Repositories\TermRepository::class,
+			\Phobrv\CoreAdmin\Repositories\TermRepositoryEloquent::class
+		);
+		$this->app->bind(
+			\Phobrv\CoreAdmin\Repositories\PostRepository::class,
+			\Phobrv\CoreAdmin\Repositories\PostRepositoryEloquent::class
+		);
+		$this->app->bind(
+			\Phobrv\CoreAdmin\Repositories\OptionRepository::class,
+			\Phobrv\CoreAdmin\Repositories\OptionRepositoryEloquent::class
+		);
+		$this->app->bind(
+			\Phobrv\CoreAdmin\Repositories\ReceiveDataRepository::class,
+			\Phobrv\CoreAdmin\Repositories\ReceiveDataRepositoryEloquent::class
+		);
+		$this->app->bind(
+			\Phobrv\CoreAdmin\Repositories\CommentRepository::class,
+			\Phobrv\CoreAdmin\Repositories\CommentRepositoryEloquent::class
+		);
+		// $this->app->bind(
+		// 	\Phobrv\CoreAdmin\Repositories\CrawlerDataRepository::class,
+		// 	\Phobrv\CoreAdmin\Repositories\CrawlerDataRepositoryEloquent::class
+		// );
+		// $this->app->bind(
+		// 	\Phobrv\CoreAdmin\Repositories\CrawlerProfileRepository::class,
+		// 	\Phobrv\CoreAdmin\Repositories\CrawlerProfileRepositoryEloquent::class
+		// );
 	}
 }

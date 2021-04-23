@@ -1,15 +1,14 @@
 <?php
 
 namespace Phobrv\CoreAdmin\Repositories;
-use App\Repositories\PostRepository;
-use App\Repositories\TermRepository;
-use App\Services\UnitServices;
-use App\Validators\PostValidator;
 use Illuminate\Container\Container as Application;
 use Illuminate\Support\Collection as collect;
 use Phobrv\CoreAdmin\Models\Post;
 use Phobrv\CoreAdmin\Models\PostMeta;
 use Phobrv\CoreAdmin\Models\Term;
+use Phobrv\CoreAdmin\Repositories\PostRepository;
+use Phobrv\CoreAdmin\Repositories\TermRepository;
+use Phobrv\CoreAdmin\Services\UnitServices;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 
@@ -31,10 +30,7 @@ class PostRepositoryEloquent extends BaseRepository implements PostRepository {
 	public function model() {
 		return Post::class;
 	}
-	public function validator() {
 
-		return PostValidator::class;
-	}
 	public function boot() {
 		$this->pushCriteria(app(RequestCriteria::class));
 	}

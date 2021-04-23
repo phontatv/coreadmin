@@ -2,8 +2,8 @@
 
 namespace Phobrv\CoreAdmin\Repositories;
 
-use App\Repositories\ReceiveDataRepository;
 use Phobrv\CoreAdmin\Models\ReceiveData;
+use Phobrv\CoreAdmin\Repositories\ReceiveDataRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 

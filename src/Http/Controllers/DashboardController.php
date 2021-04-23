@@ -36,7 +36,7 @@ class DashboardController extends Controller {
 				]
 			);
 
-			return view('admin.dashboard.index')->with('data', $data);
+			return view('phobrv::dashboard.index')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}
@@ -84,6 +84,6 @@ class DashboardController extends Controller {
 		$data['count_order'] = $orders->count();
 		$data['count_order_success'] = $orders->where('status', 'success')->count();
 		$data['count_order_pendding'] = $orders->where('status', 'pendding')->count();
-		return $data;
+		return view('phobrv::dashboard.data')->with('data', $data);
 	}
 }
