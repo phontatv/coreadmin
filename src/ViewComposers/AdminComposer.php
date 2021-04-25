@@ -20,12 +20,17 @@ class AdminComposer {
 	public $arrayQuestionGroup = [];
 	public $arrayCrawlerType = [];
 	public $arrayBrand = [];
+	public $arrayTheme = [];
 	/**
 	 * Create a movie composer.
 	 *
 	 * @return void
 	 */
 	public function __construct(TermRepository $termRepository, PostRepository $postRepository, OptionRepository $optionRepository) {
+		$this->arrayTheme = [
+			'default' => 'Default',
+			'theme1' => 'Theme1',
+		];
 		$this->templateMenu = [
 			'0' => '-',
 			'home' => 'Home',
@@ -72,5 +77,7 @@ class AdminComposer {
 		$view->with('arrayProductGroup', $this->arrayProductGroup);
 		$view->with('arrayCrawlerType', $this->arrayCrawlerType);
 		$view->with('arrayQuestionGroup', $this->arrayQuestionGroup);
+		$view->with('arrayTheme', $this->arrayTheme);
+
 	}
 }
