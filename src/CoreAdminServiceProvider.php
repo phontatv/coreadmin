@@ -13,6 +13,11 @@ class CoreAdminServiceProvider extends ServiceProvider {
 			return $user->hasRole('SuperAdmin') ? true : null;
 		});
 
+		view()->composer(
+			'phobrv::*',
+			'Phobrv\CoreAdmin\ViewComposers\AdminComposer'
+		);
+
 		$this->loadRepositories();
 		$this->migrations();
 		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'phobrv');
@@ -27,6 +32,7 @@ class CoreAdminServiceProvider extends ServiceProvider {
 	}
 
 	public function register(): void{
+		$this->app->singleton(\Phobrv\CoreAdmin\ViewComposers\AdminComposer::class);
 		$this->mergeConfigFrom(__DIR__ . '/../config/coreadmin.php', 'coreadmin');
 		$this->mergeConfigFrom(__DIR__ . '/../config/sidebar.php', 'sidebar');
 

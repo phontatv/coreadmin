@@ -2,13 +2,12 @@
 
 namespace Phobrv\CoreAdmin\Repositories;
 
-use App\Services\UnitServices;
-use App\Validators\OptionValidator;
 use Illuminate\Container\Container as Application;
 use Phobrv\CoreAdmin\Models\Option;
 use Phobrv\CoreAdmin\Repositories\OptionRepository;
 use Phobrv\CoreAdmin\Repositories\PostRepository;
 use Phobrv\CoreAdmin\Repositories\TermRepository;
+use Phobrv\CoreAdmin\Services\UnitServices;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 
@@ -40,16 +39,6 @@ class OptionRepositoryEloquent extends BaseRepository implements OptionRepositor
 	 */
 	public function model() {
 		return Option::class;
-	}
-
-	/**
-	 * Specify Validator class name
-	 *
-	 * @return mixed
-	 */
-	public function validator() {
-
-		return OptionValidator::class;
 	}
 
 	/**
