@@ -6,6 +6,8 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{asset('/vendor/phobrv/css/admin.css')}}">
 <script src="{{asset('/vendor/phobrv/js/admin.js')}}"></script>
+<script src="{{asset('/vendor/phobrv/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('/vendor/phobrv/ckeditor/config.js')}}"></script>
 <script>
 	var options = {
 		filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
