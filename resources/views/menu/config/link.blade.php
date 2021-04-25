@@ -6,7 +6,7 @@
 		<input type="hidden" name="menu_id" value="{{ $data['post']->id }}">
 		@csrf
 		<div class="box-body">
-			@include('admin.input.inputText',['label'=>'Link','key'=>'link','type'=>'meta'])
+			@include('phobrv::input.inputText',['label'=>'Link','key'=>'link','type'=>'meta'])
 		</div>
 		<div class="box-footer">
 			{{ Form::submit('Lưu cấu hình',array('class'=>'btn btn-primary')) }}

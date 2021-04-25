@@ -16,7 +16,7 @@
 					<input type="hidden" id="typeSubmit" name="typeSubmit" value="">
 					<div class="form-group">
 						<div class="col-sm-10">
-							@include('admin.input.inputImage',['key'=>'images','basic'=>true])
+							@include('phobrv::input.inputImage',['key'=>'images','basic'=>true])
 						</div>
 						<div class="col-sm-2">
 							<button class=" pull-left btn-primary btn"  type="submit" >Submit</button>

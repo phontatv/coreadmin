@@ -6,7 +6,7 @@
 		<input type="hidden" name="menu_id" value="{{ $data['post']->id }}">
 		@csrf
 		<div class="box-body">
-			@include('admin.input.inputSelect',['label'=>'Chọn nhóm bài viết','key'=>'category_term_paginate','type'=>'meta','array'=>$arrayCategory])
+			@include('phobrv::input.inputSelect',['label'=>'Chọn nhóm bài viết','key'=>'category_term_paginate','type'=>'meta','array'=>$arrayCategory])
 		</div>
 		<div class="box-footer">
 			{{ Form::submit('Lưu cấu hình',array('class'=>'btn btn-primary')) }}

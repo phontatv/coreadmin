@@ -23,21 +23,21 @@
 				<input type="hidden" id="typeSubmit" name="typeSubmit" value="">
 				<div class="col-md-8">
 					@isset($data['post'])
-					@include('admin.input.inputText',['label'=>'Url','key'=>'slug','check_auto_gen'=>'true'])
+					@include('phobrv::input.inputText',['label'=>'Url','key'=>'slug','check_auto_gen'=>'true'])
 					@endif
-					@include('admin.input.inputText',['label'=>'Title','key'=>'title','required'=>true])
-					@include('admin.input.inputText',['label'=>'Description','key'=>'excerpt'])
+					@include('phobrv::input.inputText',['label'=>'Title','key'=>'title','required'=>true])
+					@include('phobrv::input.inputText',['label'=>'Description','key'=>'excerpt'])
 					@isset($data['post'])
-					@include('admin.input.inputText',['label'=>'Create date','key'=>'created_at','datepicker'=>true])
+					@include('phobrv::input.inputText',['label'=>'Create date','key'=>'created_at','datepicker'=>true])
 					@endif
-					@include('admin.input.inputTextarea',['key'=>'content','label'=>'content','style'=>'short'])
+					@include('phobrv::input.inputTextarea',['key'=>'content','label'=>'content','style'=>'short'])
 					<label class="font16" style="margin-top: 10px;">{{__('Seo Meta')}}</label>
-					@include('admin.input.inputText',['label'=>'Meta Title','key'=>'meta_title','type'=>'meta'])
-					@include('admin.input.inputText',['label'=>'Meta Description','key'=>'meta_description','type'=>'meta'])
-					@include('admin.input.inputText',['label'=>'Meta Keywords','key'=>'meta_keywords','type'=>'meta'])
+					@include('phobrv::input.inputText',['label'=>'Meta Title','key'=>'meta_title','type'=>'meta'])
+					@include('phobrv::input.inputText',['label'=>'Meta Description','key'=>'meta_description','type'=>'meta'])
+					@include('phobrv::input.inputText',['label'=>'Meta Keywords','key'=>'meta_keywords','type'=>'meta'])
 				</div>
 				<div class="col-md-4">
-					@include('admin.input.inputImage',['key'=>'thumb'])
+					@include('phobrv::input.inputImage',['key'=>'thumb'])
 					<hr>
 					<div class="form-group">
 						<div class="col-sm-12">

@@ -6,8 +6,8 @@
 		<input type="hidden" name="typeSubmit" id="typeSubmit" value="update">
 		@csrf
 		<div class="box-body">
-			@include('admin.input.inputFile',['label'=>'Thumb','key'=>'thumb','width'=>'200px'])
-			@include('admin.input.inputTextarea',['label'=>'Content','key'=>'content'])
+			@include('phobrv::input.inputFile',['label'=>'Thumb','key'=>'thumb','width'=>'200px'])
+			@include('phobrv::input.inputTextarea',['label'=>'Content','key'=>'content'])
 		</div>
 		<div class="box-footer">
 			{{ Form::submit('Lưu cấu hình',array('class'=>'btn btn-primary')) }}

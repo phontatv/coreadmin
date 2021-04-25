@@ -11,56 +11,56 @@
 <div class="row">
 	<div class="col-sm-3">
 		<ul class="nav nav-pills nav-stacked">
-			@include('admin.input.navTab',['id'=>'mainInfo','title'=>'Main Info','active'=>'active'])
+			@include('phobrv::input.navTab',['id'=>'mainInfo','title'=>'Main Info','active'=>'active'])
 			@switch($data['post']->subtype)
 			@case('home')
-			@include('admin.menu.home.nav')
+			@include('phobrv::menu.home.nav')
 			@break
 			@case('category')
-			@include('admin.input.navTab',['id'=>'category','title'=>'Cấu hình page'])
+			@include('phobrv::input.navTab',['id'=>'category','title'=>'Cấu hình page'])
 			@break
 			@case('article')
-			@include('admin.input.navTab',['id'=>'article','title'=>'Cấu hình page'])
+			@include('phobrv::input.navTab',['id'=>'article','title'=>'Cấu hình page'])
 			@break
 			@case('contact')
-			@include('admin.input.navTab',['id'=>'contact','title'=>'Cấu hình page'])
+			@include('phobrv::input.navTab',['id'=>'contact','title'=>'Cấu hình page'])
 			@break
 			@case('product')
-			@include('admin.input.navTab',['id'=>'product','title'=>'Cấu hình page'])
+			@include('phobrv::input.navTab',['id'=>'product','title'=>'Cấu hình page'])
 			@break
 			@endswitch
 
 			@switch($data['post']->subtype)
 			@case('category')
-			@include('admin.input.navTab',['id'=>'sidebar','title'=>'Cấu hình box sidebar'])
+			@include('phobrv::input.navTab',['id'=>'sidebar','title'=>'Cấu hình box sidebar'])
 			@break
 			@endswitch
 		</ul>
 	</div>
 	<div class="col-sm-9">
 		<div class="tab-content">
-			@include('admin.input.tabContent',['id'=>'mainInfo','view'=>'admin.menu.mainInfo','active'=>'active'])
+			@include('phobrv::input.tabContent',['id'=>'mainInfo','view'=>'phobrv::menu.mainInfo','active'=>'active'])
 			@switch($data['post']->subtype)
 			@case('home')
-			@include('admin.menu.home.tabpanel')
+			@include('phobrv::menu.home.tabpanel')
 			@break
 			@case('category')
-			@include('admin.input.tabContent',['id'=>'category','view'=>'admin.menu.config.category'])
+			@include('phobrv::input.tabContent',['id'=>'category','view'=>'phobrv::menu.config.category'])
 			@break
 			@case('article')
-			@include('admin.input.tabContent',['id'=>'article','view'=>'admin.menu.config.article'])
+			@include('phobrv::input.tabContent',['id'=>'article','view'=>'phobrv::menu.config.article'])
 			@break
 			@case('contact')
-			@include('admin.input.tabContent',['id'=>'contact','view'=>'admin.menu.config.contact'])
+			@include('phobrv::input.tabContent',['id'=>'contact','view'=>'phobrv::menu.config.contact'])
 			@break
 			@case('product')
-			@include('admin.input.tabContent',['id'=>'product','view'=>'admin.menu.config.product'])
+			@include('phobrv::input.tabContent',['id'=>'product','view'=>'phobrv::menu.config.product'])
 			@break
 			@endswitch
 
 			@switch($data['post']->subtype)
 			@case('category')
-			@include('admin.input.tabContent',['id'=>'sidebar','view'=>'admin.menu.config.sidebar'])
+			@include('phobrv::input.tabContent',['id'=>'sidebar','view'=>'phobrv::menu.config.sidebar'])
 			@break
 			@endswitch
 		</div>

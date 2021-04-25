@@ -1,1 +1,1 @@
-@include('admin.input.tabContent',['id'=>'slide','view'=>'admin.menu.config.slide'])
+@include('phobrv::input.tabContent',['id'=>'slide','view'=>'phobrv::menu.config.slide'])

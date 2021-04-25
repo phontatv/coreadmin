@@ -14,7 +14,7 @@
 				<form class="form-horizontal" id="formSubmit" method="post" action="{{isset($data['post']) ? route('post.update',array('post'=>$data['post']->id)) : route('post.store')}}"  enctype="multipart/form-data">
 					@csrf
 					<input type="hidden" id="typeSubmit" name="typeSubmit" value="">
-					@include('admin.input.inputText',['label'=>'Title','key'=>'title','required'=>true])
+					@include('phobrv::input.inputText',['label'=>'Title','key'=>'title','required'=>true])
 					<button id="btnSubmit" style="display: none" type="submit" ></button>
 				</form>
 			</div>
