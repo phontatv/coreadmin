@@ -47,8 +47,6 @@ Package use AdminLTE  Bootstrap Admin Dashboard Template (v2.4.13)
     'resources/assets/adminlte/dist/js/demo.js',
     'resources/assets/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
     'resources/assets/adminlte/bower_components/select2/dist/js/select2.js',
-    'resources/assets/ckeditor/ckeditor.js',
-    'resources/assets/ckeditor/config.js',
     'resources/assets/adminlte/bower_components/raphael/raphael.min.js',
     'resources/assets/adminlte/bower_components/morris.js/morris.min.js',
     'public/vendor/laravel-filemanager/js/stand-alone-button.js',  
