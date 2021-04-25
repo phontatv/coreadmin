@@ -65,7 +65,7 @@ class ReceiveDataController extends Controller {
 				$data['dataes'] = $this->receiveRepository->orderBy('id', 'desc')->findWhereIn('type', $arrayFindWhere['type']);
 			}
 
-			return view('admin.receive.index')->with('data', $data);
+			return view('phobrv::receive.index')->with('data', $data);
 
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());

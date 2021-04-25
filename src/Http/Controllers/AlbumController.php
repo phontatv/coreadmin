@@ -39,7 +39,7 @@ class AlbumController extends Controller {
 				]
 			);
 			$data['images'] = $data['post']->posts()->orderBy('order')->get();
-			return view('admin.album.index')->with('data', $data);
+			return view('phobrv::album.index')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}

@@ -52,7 +52,7 @@ class QuestionController extends Controller {
 				$data['questions'] = $this->termRepository->getPostsByTermID($data['select']);
 			}
 			$data['arrayGroup'] = $this->termRepository->getArrayTerms($this->taxonomy);
-			return view('admin.question.index')->with('data', $data);
+			return view('phobrv::question.index')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}
@@ -88,7 +88,7 @@ class QuestionController extends Controller {
 			$data['select'] = $this->userRepository->getMetaValueByKey($user, 'question_select');
 			$data['categorys'] = $this->termRepository->getTermsOrderByParent($this->taxonomy);
 			$data['arrayCategoryID'] = [];
-			return view('admin.question.create')->with('data', $data);
+			return view('phobrv::question.create')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}
@@ -157,7 +157,7 @@ class QuestionController extends Controller {
 			$data['post'] = $this->postRepository->find($id);
 			$data['arrayCategoryID'] = $this->termRepository->getArrayTermIDByTaxonomy($data['post']->terms, 'questiongroup');
 			$data['meta'] = $this->postRepository->getMeta($data['post']->postMetas);
-			return view('admin.question.create')->with('data', $data);
+			return view('phobrv::question.create')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}

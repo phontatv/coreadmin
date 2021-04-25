@@ -41,7 +41,7 @@ class CustomerIdeaController extends Controller {
 
 		try {
 			$data['ideas'] = $this->postRepository->all()->where('type', $this->type);
-			return view('admin.customer.index')->with('data', $data);
+			return view('phobrv::customer.index')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}
@@ -62,7 +62,7 @@ class CustomerIdeaController extends Controller {
 			]
 		);
 		try {
-			return view('admin.customer.create')->with('data', $data);
+			return view('phobrv::customer.create')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}
@@ -127,7 +127,7 @@ class CustomerIdeaController extends Controller {
 		try {
 			$data['post'] = $this->postRepository->find($id);
 			$data['metas'] = $this->postRepository->getMeta($data['post']->postMetas);
-			return view('admin.customer.create')->with('data', $data);
+			return view('phobrv::customer.create')->with('data', $data);
 		} catch (Exception $e) {
 			return back()->with('alert_danger', $e->getMessage());
 		}
