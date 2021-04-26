@@ -2,11 +2,12 @@
 
 namespace Phobrv\CoreAdmin\Services;
 use Str;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class PostServices {
 	public function handleMenuPost($data) {
 		$data['menu'] = "";
-		$html = str_get_html($data['content']);
+		$html = HtmlDomParser::str_get_html($data['content']);
 		if ($html != "") {
 			$data['content'] = str_replace("<br />", "", $data['content']);
 			$menu = "<ul id='postMenu' style='display:none'>";
