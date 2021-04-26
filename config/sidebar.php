@@ -186,5 +186,39 @@ return [
 			'permissions' => ['receive_manage'],
 			'children' => [],
 		],
+		[
+			'id' => 'menu-product',
+			'title' => 'Products',
+			'icon' => 'fa fa-gavel',
+			'href' => '',
+			'permissions' => ['product_manage'],
+			'children' => [
+				[
+					'id' => '',
+					'title' => 'CategoriesProduct',
+					'icon' => 'fa-building-o',
+					'href' => 'admin/term/product',
+					'permissions' => [],
+					'children' => [],
+				],
+				[
+					'id' => '',
+					'title' => 'Brand',
+					'icon' => 'fa-building-o',
+					'href' => 'admin/term/brand',
+					'permissions' => [],
+					'children' => [],
+				],
+				[
+					'id' => '',
+					'title' => 'All Product',
+					'icon' => 'fa-building-o',
+					'href' => 'admin/productitem',
+					'permissions' => [],
+					'children' => [],
+				],
+
+			],
+		],
 	],
 ];

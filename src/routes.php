@@ -100,4 +100,12 @@ Route::middleware(['web', 'auth', 'auth:sanctum', 'lang', 'verified'])->namespac
 		Route::get('/receive/updateStatus/{id}/{status}', 'ReceiveDataController@updateStatus')->name('receive.updateStatus');
 
 	});
+
+	Route::middleware(['can:product_manage'])->prefix('admin')->group(function () {
+		Route::resource('term/brand', 'TermController');
+		Route::resource('term/product', 'TermController');
+		Route::resource('productitem', 'ProductController');
+		Route::post('/productitem/updateUserSelectGroup', 'ProductController@updateUserSelectGroup')->name('productitem.updateUserSelectGroup');
+		Route::post('/productitem/deleteMetaAPI', 'ProductController@deleteMetaAPI')->name('productitem.deleteMetaAPI');
+	});
 });

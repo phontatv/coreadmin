@@ -21,12 +21,19 @@ class AdminComposer {
 	public $arrayCrawlerType = [];
 	public $arrayBrand = [];
 	public $arrayTheme = [];
+	public $orderStatus = [];
 	/**
 	 * Create a movie composer.
 	 *
 	 * @return void
 	 */
 	public function __construct(TermRepository $termRepository, PostRepository $postRepository, OptionRepository $optionRepository) {
+		$this->orderStatus = [
+			'0' => '-',
+			'pendding' => 'Pendding',
+			'success' => 'Success',
+			'fail' => 'Fail',
+		];
 		$this->arrayTheme = [
 			'default' => 'Default',
 			'theme1' => 'Theme1',
@@ -78,6 +85,7 @@ class AdminComposer {
 		$view->with('arrayCrawlerType', $this->arrayCrawlerType);
 		$view->with('arrayQuestionGroup', $this->arrayQuestionGroup);
 		$view->with('arrayTheme', $this->arrayTheme);
+		$view->with('orderStatus', $this->orderStatus);
 
 	}
 }
