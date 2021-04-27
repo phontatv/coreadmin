@@ -74,10 +74,10 @@ class CoreAdminServiceProvider extends ServiceProvider {
 	}
 
 	public function migrations() {
-		$this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-		$this->publishes([
-			__DIR__ . '/database/migrations/' => database_path('migrations'),
-		], 'coreadmin.migrations');
+		$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+		// $this->publishes([
+		// 	__DIR__ . '/../database/migrations/' => database_path('migrations'),
+		// ], 'coreadmin.migrations');
 	}
 
 	public function defineMiddleware() {
