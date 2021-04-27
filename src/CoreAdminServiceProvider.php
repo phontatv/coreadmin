@@ -19,10 +19,9 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		);
 
 		$this->loadRepositories();
-		// $this->migrations();
+		$this->migrations();
 		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'phobrv');
 		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'phobrv');
-		$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 		$this->loadRoutesFrom(__DIR__ . '/routes.php');
 
 		if ($this->app->runningInConsole()) {
@@ -75,9 +74,9 @@ class CoreAdminServiceProvider extends ServiceProvider {
 
 	public function migrations() {
 		$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-		// $this->publishes([
-		// 	__DIR__ . '/../database/migrations/' => database_path('migrations'),
-		// ], 'coreadmin.migrations');
+		$this->publishes([
+			__DIR__ . '/../database/migrations/' => database_path('migrations'),
+		], 'coreadmin.migrations');
 	}
 
 	public function defineMiddleware() {
