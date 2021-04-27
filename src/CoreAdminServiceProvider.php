@@ -19,7 +19,7 @@ class CoreAdminServiceProvider extends ServiceProvider {
 		);
 
 		$this->loadRepositories();
-		$this->migrations();
+		// $this->migrations();
 		$this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'phobrv');
 		$this->loadViewsFrom(__DIR__ . '/../resources/views', 'phobrv');
 		$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
